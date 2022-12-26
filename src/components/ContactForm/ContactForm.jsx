@@ -16,17 +16,6 @@ import {
   ButtonIconStyled,
 } from './ContactForm.styled';
 
-const validationShema = yup.object().shape({
-  name: yup
-    .string()
-    .matches(validationString.name, message.wrongInput)
-    .required(message.isRequired),
-  phone: yup
-    .string()
-    .matches(validationString.phone, message.wrongInput)
-    .required(message.isRequired),
-});
-
 const PhonebookEditor = ({ onSubmit }) => {
   const handelSubmit = (values, { resetForm }) => {
     const id = nanoid();
@@ -92,3 +81,14 @@ const PhonebookEditor = ({ onSubmit }) => {
 };
 
 export default PhonebookEditor;
+
+const validationShema = yup.object().shape({
+  name: yup
+    .string()
+    .matches(validationString.name, message.wrongInput)
+    .required(message.isRequired),
+  phone: yup
+    .string()
+    .matches(validationString.phone, message.wrongInput)
+    .required(message.isRequired),
+});
