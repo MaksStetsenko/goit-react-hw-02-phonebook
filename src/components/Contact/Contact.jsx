@@ -28,4 +28,5 @@ Contact.propTypes = {
   contactId: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
+  getContactId: PropTypes.func.isRequired,
 }
