@@ -3,6 +3,7 @@ import React from 'react';
 import { Formik, Form, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 import { initialValue, validationString, message } from '../settings';
 
@@ -92,3 +93,7 @@ const validationShema = yup.object().shape({
     .matches(validationString.phone, message.wrongInput)
     .required(message.isRequired),
 });
+
+PhonebookEditor.propTypes = {
+  onSubmit: PropTypes.func,
+}
